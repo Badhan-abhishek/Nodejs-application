@@ -1,0 +1,92 @@
+@layout('layouts.app')
+@section('content')
+
+    <br>
+    <div class="row">
+     <div id="carouselExampleIndicators" class="carousel slide col-md-8" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/image/image.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/image/image.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="/image/image.jpg" alt="First slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+<div class="col-md-4">
+    <h3><span class="unique_notification">Notifications</span></h3>
+    <div class="noti_box">
+    <div class="overflow-auto " style="height: auto;">
+    <ul class="list-group">
+         @each(notification in notifications)
+         <div class="notification_div">
+            <li id="notification_style">
+                <a class="notification_link" style="text-decoration: none;" href="/notification/{{ notification.id }}">{{ notification.title }}</a>
+            </li>
+            </div>
+        @endeach
+    </ul>
+    </div>
+    </div>
+</div>
+
+</div>
+    <!-- Founder Section Starts Here -->
+    <div class="founderBox" >
+        <h3>Founders</h3>
+        <div class="row">
+            <div class="col-md-3 founderBlock">
+                <img src="image/image.jpg" class="presImg">
+                <br>
+                <caption>Name</caption>
+            </div>
+            <div class="col-md-3 founderBlock">
+                <img src="image/image.jpg" class="presImg">
+                <br>
+                <caption>Name</caption>
+            </div>
+            <div class="col-md-3 founderBlock">
+                <img src="image/image.jpg" class="presImg">
+                <br>
+                <caption>Name</caption>
+            </div>
+            <div class="col-md-3 founderBlock">
+                <img src="image/image.jpg" class="presImg">
+                <br>
+                <caption>Name</caption>
+            </div>
+        </div>
+    </div>
+    <!-- About Section ends here -->
+    <div class="body_container">
+        <div class="bg-primary">
+        <span style="font-size: 1.6vw;">About us</span>
+        </div>
+        <p>
+           Lorem Ipsum
+        </p>
+     </div>
+     </div>
+
+@endsection

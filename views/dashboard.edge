@@ -1,0 +1,75 @@
+@layout('layouts.app')
+@section('content')
+<style type="text/css">
+	.cs, .hm{
+		width: 75px;
+		height: 75px;
+	}
+</style>
+<div class="dashboardMain " >
+		<div class="dashboard-card bg-success ">
+				<div class="card-body">
+				<h5 class="card-title">Members</h5>
+				<p class="card-text">See all the list of members</p>
+				<a href="/members" class="btn btn-primary">More</a>
+				</div>
+		</div>	
+		<div class="dashboard-card bg-success ">
+				<div class="card-body">
+				<h5 class="card-title">Certificates</h5>
+				<p class="card-text">This section contains all document related to the Mahasabha</p>
+				<a href="/certificate/folder" class="btn btn-primary">More</a>
+				</div>
+		</div>
+		<div class="dashboard-card bg-success ">
+				<div class="card-body">
+				<h5 class="card-title">Register</h5>
+				<p class="card-text">Register new user with minimum roles</p>
+				<a href="/auth/register" class="btn btn-primary">More</a>
+				</div>
+		</div>
+		<div class="dashboard-card bg-success ">
+				<div class="card-body">
+				<h5 class="card-title">Create Notification</h5>
+				<p class="card-text">Create Notification here to show them on home screen</p>
+				<a href="/create/new" class="btn btn-primary">More</a>
+				</div>
+		</div>
+		<div class="dashboard-card bg-success ">
+				<div class="card-body">
+				<h5 class="card-title">Add Images</h5>
+				<p class="card-text">You can add images to gallery from  here</p>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Add Images
+</button>
+				</div>
+		</div>
+	</div>
+
+	<!-- Model starts here -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/image/new" enctype="multipart/form-data">
+			<div class="form-group mt-5">
+                <input type="file" name="image" class="form-control-file" multiple>
+            </div>
+      </div>
+        <input type="submit" name="Submit">
+	  </form>
+    </div>
+  </div>
+</div>
+<script>
+	$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+@endsection

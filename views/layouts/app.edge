@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HPGRM</title>
+    <link rel="shortcut icon" href="image/image.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href='https://fonts.googleapis.com/css?family=Alex Brush' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Bree+Serif" rel="stylesheet">
+     <link rel="stylesheet" type="text/css" href="/css/home.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital@1&family=Roboto&display=swap');
+</style>
+</head>
+<body style="font-family:'Roboto', sans-serif">
+    <div class="mainBody">
+	<div class="Banner">
+        <h2 class="format"> <b>WEBSITE TITLE</b></h2>
+        <a href="/"><img src="/image/image.jpg" alt="logo" width="60px" height="60px" class="logoImg"></a>
+    </div>
+    
+
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#030f69;">
+  <a class="navbar-brand mb-0 h1" href="/">HPGRM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item nav-btn">
+        <a class="nav-link mb-0" href="/gallery">Gallery</a>
+      </li>
+      @if(!auth)
+      <li class="nav-item nav-btn">
+        <a class="nav-link mb-0" href="/auth/user">Log in</a>
+      </li>
+      @else
+      <li class="nav-item nav-btn">
+        <a class="nav-link mb-0" href="/auth/logout">Log out</a>
+      </li>
+      @endif
+      <li class="nav-item nav-btn dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Menu
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item list-group-item-action list-group-item-dark" href="/contact">President and General Secretary[State]</a>
+          <a class="dropdown-item list-group-item-action list-group-item-dark" href="/StateMembers">State Governing Council</a>
+          <a class="dropdown-item list-group-item-action list-group-item-dark" href="/district">President[District]</a>
+          <a class="dropdown-item list-group-item-action list-group-item-dark" href="/dashboard">Dashboard[Admin]</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+    @!section('content')
+    <hr>
+    <footer>
+        All contents © 2020 Copyright
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+

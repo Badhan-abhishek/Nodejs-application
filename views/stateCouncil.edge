@@ -1,0 +1,44 @@
+@layout('layouts.app')
+@section('content')
+
+<style>
+       tr, td, th{
+         border: 2px solid black;
+       }
+       .columnWidth{
+         width: 200px;
+       }
+       .columnWidth0{
+         width: 200px;
+       }
+       .columnWidth2{
+         width: 210px;
+       }
+       .columnWidth1{
+         width: 285px;
+       }
+       td{
+         height: 50px;
+       }
+       th{
+         height: 40px;
+       }
+     </style>
+    <div class="table_content">
+    <h3>Another data table</h3>
+    <table class="dt_table">
+        <thead class="bg-primary">
+          <tr>
+            <th class="columnWidth0">Designation</th>
+            <th class="columnWidth">Name</th>
+            <th class="columnWidth2">Address</th>
+          </tr>
+        </thead>
+        
+      </table>
+        </div>
+    </div>
+    </div>
+</div>
+
+@endsection

@@ -1,0 +1,15 @@
+@layout('layouts.app')
+@section('content')
+
+  <div class="jumbotron">
+  @if(!auth)
+  <h5></h>
+  @else
+  <a class="btn" href="/delete/notification/{{ notifications.id }}"><i class="fa fa-trash"></i> Delete Post</a>
+  @endif
+  <h1 class="display-4">{{ notifications.title }}</h1>
+  <p><i>By </i>{{ notifications.createdBy }}, {{ notifications.timeCreated.toDateString()}}</p>
+  <p class="lead">{{ notifications.notification}}</p>
+  <hr class="my-4">
+</div>
+@endsection

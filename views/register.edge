@@ -1,0 +1,45 @@
+@layout('layouts.app')
+
+@section('content')
+<h1>Create a new account </h1>
+
+<div class="container">
+<div class="row">
+    <div class="col-md-8 offset-md-2">
+    @if(errors.length > 0)
+    <ul class="list-group">
+    @each(error in errors)
+    <li class="list-group-item text-danger">{{ error }}</li>
+    @endeach
+    @endif
+    </ul>
+        <form action="/users/register" method="POST">
+             <div class="control-group">
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input value="{{ data.username || '' }}" placeholder="username" type="text" name="username" class="form-control">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group">
+                    <label for="">Email</label>
+                    <input value="{{ data.email || '' }}" placeholder="Email" type="email" name="email" class="form-control">
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input placeholder="Password" type="Password" name="password" class="form-control">
+                </div>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn mg-4 btn-primary">
+                    register
+                </button>
+            </div>
+            
+        </form>
+    </div>
+</div>
+</div>
+@endsection

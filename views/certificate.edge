@@ -1,0 +1,60 @@
+@layout('layouts.app')
+@section('content')
+<br>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Add Pdf
+</button>
+<table class="table table-dark mt-5">
+  <thead>
+    <th>Name</th>
+    <th>Description</th>
+    <th>File</th>
+  </thead>
+  <tbody>
+    @each(certificate in certificates)
+    <tr>
+      <td scope="col">{{certificate.title }}</td>
+      <td scope="col">{{ certificate.description }}</td>
+      <td scope="col"><a href="{{ certificate.name }}"> Download File</a></td>
+    </tr>
+    @endeach
+  </tbody>
+</table>
+
+
+<!-- Model starts here -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form method="POST" action="/certificate/new" enctype="multipart/form-data">
+          Enter Title:
+			<div class="form-group mt-5">
+                <input type="text" name="title" class="form-control-file" multiple>
+            </div>
+            Enter Description:
+      <div class="form-group mt-5">
+                <input type="text" name="description" class="form-control-file" multiple>
+            </div>
+            Submit File:
+      <div class="form-group mt-5">
+                <input type="file" name="certificate" class="form-control-file" multiple>
+            </div>
+      </div>
+        <input type="submit" name="Submit">
+	  </form>
+    </div>
+  </div>
+</div>
+<script>
+	$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+@endsection
